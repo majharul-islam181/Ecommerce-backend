@@ -10,3 +10,16 @@ Install Express
 ```
 npm install express
 ```
+
+`
+1. Course plan
+2. Environment setup
+3. Create express server
+4. HTTP request & response
+
+
+
+
+
+
+`
