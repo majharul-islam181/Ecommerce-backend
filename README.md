@@ -16,6 +16,7 @@ npm install express
 2. Environment setup
 3. Create express server
 4. HTTP request & response
+5. nodemon and morgan package
 
 
 
