@@ -18,7 +18,8 @@ npm install express
 4. HTTP request & response
 5. nodemon and morgan package
 6. Middleware
-7. Express Error Handling Middleware
+7. Express Error Handling Middleware => body-parser
+8. How to handle HTTP errors.=> http-errors
 
 
 
