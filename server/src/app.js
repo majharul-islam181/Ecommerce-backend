@@ -3,7 +3,9 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')//third party middleware
 const createError = require('http-errors')
 const xssClean = require('xss-clean')
+const expressRouter = require('./routers/userRouter')
 const rateLimit = require('express-rate-limit')
+
 const app = express();
 
 const rateLimiter = rateLimit({
@@ -16,6 +18,7 @@ const rateLimiter = rateLimit({
 app.use(morgan("dev"))
 app.use(xssClean())
 app.use(rateLimiter)
+app.use("/api/users/",expressRouter)
 
 //express build-in middleware
 // https://expressjs.com/en/guide/using-middleware.html#middleware.built-in
@@ -24,6 +27,7 @@ app.use(rateLimiter)
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}))
+
 
 // const isLoggedIn = (req,res,next)=>{
 
@@ -41,11 +45,11 @@ app.use(bodyParser.urlencoded({ extended: true}))
 
 
 
-app.get('/test', (req, res)=>{
-    res.status(200).send({
-        "message": "welcome to server! "
-    })
-})
+// app.get('/test', (req, res)=>{
+//     res.status(200).send({
+//         "message": "welcome to server! "
+//     })
+// })
 
 // app.get('/api/userProfile', isLoggedIn, (req,res)=>{
 //     console.log(req.body.id)

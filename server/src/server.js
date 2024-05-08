@@ -79,9 +79,7 @@ const app = require('./app');
 const { serverPORT } = require('./secret');
 
 
-const port = serverPORT;
-
-
+const port = 3001;
 
 app.listen(port, ()=>{
     console.log(`server is running at http://localhost:${port}`)
