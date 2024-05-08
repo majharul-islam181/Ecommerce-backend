@@ -12,7 +12,7 @@ npm install express
 ```
 
 `
-1. Course plan
+1. Planing
 2. Environment setup
 3. Create express server
 4. HTTP request & response
@@ -21,6 +21,7 @@ npm install express
 7. Express Error Handling Middleware => body-parser
 8. How to handle HTTP errors.=> http-errors
 9. How to secure Api => xss-clean, express-rate-limit
+10. Environment Variable => dotenv
 
 
 
