@@ -2,9 +2,20 @@ const express = require('express')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')//third party middleware
 const createError = require('http-errors')
+const xssClean = require('xss-clean')
+const rateLimit = require('express-rate-limit')
 const app = express();
 
+const rateLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000,
+    max: 5,
+    message: "Too many request"
+})
+
+
 app.use(morgan("dev"))
+app.use(xssClean())
+app.use(rateLimiter)
 
 //express build-in middleware
 // https://expressjs.com/en/guide/using-middleware.html#middleware.built-in
@@ -64,7 +75,7 @@ app.use((req,res,next)=>{
 
     // })
     // next();
-    
+
     //using HttpErros
     createError(404,'no routes')
     next();

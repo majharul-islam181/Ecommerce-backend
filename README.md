@@ -20,6 +20,8 @@ npm install express
 6. Middleware
 7. Express Error Handling Middleware => body-parser
 8. How to handle HTTP errors.=> http-errors
+9. How to secure Api => xss-clean, express-rate-limit
+
 
 
 
